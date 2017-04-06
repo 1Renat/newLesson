@@ -22009,10 +22009,103 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 /* 181 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: C:/Users/user/Desktop/javascript/lesson_2/client/components/add.js: Unexpected token (28:3)\n\n\u001b[0m \u001b[90m 26 | \u001b[39m\t\t\t\tplaceholder \u001b[33m=\u001b[39m \u001b[32m\"news text\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mtextarea\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 27 | \u001b[39m\t\t\t\u001b[33m<\u001b[39m\u001b[33mlabel\u001b[39m className \u001b[33m=\u001b[39m \u001b[32m\"add_checkrule\"\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 | \u001b[39m\t\t\t\u001b[33m<\u001b[39m\u001b[33minput\u001b[39m\n \u001b[90m    | \u001b[39m\t\t\t\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 | \u001b[39m\t\t\t\n \u001b[90m 30 | \u001b[39m\t\t\t\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mform\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 31 | \u001b[39m\t\t\t)\u001b[0m\n");
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(25);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Add = function (_Component) {
+  _inherits(Add, _Component);
+
+  function Add(props) {
+    _classCallCheck(this, Add);
+
+    var _this = _possibleConstructorReturn(this, (Add.__proto__ || Object.getPrototypeOf(Add)).call(this, props));
+
+    _this.state = {
+      agreeNotChecked: true,
+      authorIsEmpty: true,
+      textIsEmpty: true
+    };
+    return _this;
+  }
+
+  _createClass(Add, [{
+    key: "onFieldChange",
+    value: function onFieldChange() {}
+  }, {
+    key: "onChange",
+    value: function onChange() {}
+  }, {
+    key: "onCheckRule",
+    value: function onCheckRule() {}
+  }, {
+    key: "onBtnClickHandler",
+    value: function onBtnClickHandler() {}
+  }, {
+    key: "render",
+    value: function render() {
+      var agreeNotChecked = this.state.agreeNotChecked,
+          authorIsEmpty = this.state.authorIsEmpty,
+          textIsEmpty = this.state.textIsEmpty;
+
+      return _react2.default.createElement(
+        "form",
+        { className: "add cf" },
+        _react2.default.createElement("input", {
+          type: "text",
+          className: "add_author",
+          onChange: this.onFieldChange.bind(this, 'authorIsEmpty'),
+          placeholder: "\u0412\u0430\u0448\u0435 \u0438\u043C\u044F",
+          ref: "author" }),
+        _react2.default.createElement("textarea", {
+          className: "add_text",
+          onChange: this.onFieldChange.bind(this, 'textIsEmpty'),
+          placeholder: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0442\u0435\u043A\u0441\u0442 \u043D\u043E\u0432\u043E\u0441\u0442\u0438" }),
+        _react2.default.createElement(
+          "label",
+          { className: "add_checkrule" },
+          _react2.default.createElement("input", {
+            type: "checkbox",
+            ref: "checkrule",
+            onChange: this.onCheckRule }),
+          "\u042F \u0441\u043E\u0433\u043B\u0430\u0441\u0435\u043D \u0441 \u043F\u0440\u0430\u0432\u0438\u043B\u0430\u043C\u0438 \u043D\u043E\u0432\u043E\u0441\u0442\u043D\u043E\u0433\u043E \u0441\u0430\u0439\u0442\u0430 :)"
+        ),
+        _react2.default.createElement(
+          "button",
+          {
+            className: "add_btn",
+            onClick: this.onBtnClickHandler,
+            ref: "alert_button",
+            disabled: agreeNotChecked || authorIsEmpty || textIsEmpty },
+          "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043D\u043E\u0432\u043E\u0441\u0442\u044C"
+        )
+      );
+    }
+  }]);
+
+  return Add;
+}(_react.Component);
+
+exports.default = Add;
 
 /***/ })
 /******/ ]);
